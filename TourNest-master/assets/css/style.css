@@ -292,6 +292,12 @@ html,body{
     background: #00d8d5;
     border: 1px solid #00d8d5;
 }/*book-btn*/
+.restaurant-photo{
+    width: 370px;
+}
+.long{
+    font-size: 16px;
+}
 
 /*-------------------------------------
 		3. 	About
