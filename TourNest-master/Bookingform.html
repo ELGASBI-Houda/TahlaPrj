@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Booking Form</title>
+    <!-- favicon img -->
+		<link rel="shortcut icon" type="image/icon" href="assets/logo/planet-earth.png"/>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <section class="container">
+      <header>Booking Form</header>
+      <form action="" class="form" id="contactForm">
+        <div class="input-box">
+          <label>Full Name</label>
+          <input type="text" id="name" placeholder="Enter full name" required />
+        </div>
+
+        <div class="input-box">
+          <label>Email Address</label>
+          <input type="text" id="email" placeholder="Enter email address" required />
+        </div>
+
+        <div class="column">
+          <div class="input-box">
+            <label>Phone Number</label>
+            <input type="number" id="phone" placeholder="Enter phone number" required />
+          </div>
+          <div class="input-box">
+            <label>Address</label>
+            <input type="text" id="address" placeholder="Enter street address" required />
+          </div>
+        </div>
+        <div class="column">
+          <div class="input-box">
+            <label>Arrive</label>
+            <input type="date" id="Adate" placeholder="Enter your arrive date" required />
+          </div>
+          <div class="input-box">
+            <label>Depart</label>
+            <input type="date" id="Ddate" placeholder="Enter your depart date" required />
+          </div>
+        </div>
+        <div class="column">
+          <div class="input-box">
+            <label>People</label>
+            <input type="number" id="people" placeholder="People" required />
+          </div>
+          <div class="input-box">
+            <label>Room</label>
+            <input type="number" id="room" placeholder="Room" required />
+          </div>
+          <div class="input-box">
+            <label>Bedding</label>
+            <input type="number" id="bedding" placeholder="Bedding" required />
+          </div>
+        </div>
+        <div class="textarea-box">
+          <label>Please describe your needs e.g. Extra beds, children's cots</label>
+          <textarea placeholder="Enter you breif description or comment here" id="description" required></textarea>
+        </div>&nbsp;
+    
+        <button type="submit">Book Now</button>
+      </form>
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
+		<script src="mail.js"></script>
+  </body>
+</html>
+
