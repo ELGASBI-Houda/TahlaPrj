@@ -23,14 +23,13 @@ function submitForm(e) {
   var email = getElementVal("email");
   var phone = getElementVal("phone");
   var date = getElementVal("date");
-  var checkfemale  = getElementVal("check-female");
-  var checkmale = getElementVal("check-male");
-  /*var address = getElementVal("address");
+  //var gender = getElementVal("gender");
+  var address = getElementVal("address");
   var service = getElementVal("service");
   var description = getElementVal("description");
-  var images = getElementVal("images");*/
+  //var images = getElementVal("images");
 
-  saveMessages(name, email, phone, date, checkmale, checkfemale);
+  saveMessages(name, email, phone, date, address, service, description);
 
   //   enable alert
   document.querySelector(".alert").style.display = "block";
@@ -44,7 +43,7 @@ function submitForm(e) {
   document.getElementById("contactForm").reset();
 }
 
-const saveMessages = (name, email, phone, date, checkmale, checkfemale) => {
+const saveMessages = (name, email, phone, date, address, service, description) => {
   var newContactForm = contactFormDB.push();
 
   newContactForm.set({
@@ -52,10 +51,39 @@ const saveMessages = (name, email, phone, date, checkmale, checkfemale) => {
     email: email,
     phone: phone,
     date: date,
-    checkmale: check-male,
-    checkfemale: check-female,
+    address: address,
+    service: service,
+    description: description,
   });
 };
+
+//function to upload image file to firebase storage
+/*function uploadImage() { 
+  var file = document.getElementById("images").files[0];
+  var storageRef = firebase.storage().ref("images/" + file.name);
+  var uploadTask = storageRef.put(file);
+  uploadTask.on('state_changed', function(snapshot) {
+    var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+    console.log("upload is " + progress + "% done");
+    switch (snapshot.state) {
+      case firebase.storage.TaskState.PAUSED: // or 'paused'
+        console.log('Upload is paused');
+        break;
+      case firebase.storage.TaskState.RUNNING: // or 'running'
+        console.log('Upload is running');
+        break;
+    }
+  }, function(error) {
+    // Handle unsuccessful uploads
+  }, function() {
+    // Handle successful uploads on complete
+    // For instance, get the download URL: https://firebasestorage.googleapis.com/...
+    uploadTask.snapshot.ref.getDownloadURL().then(function(downloadURL) {
+      console.log('File available at', downloadURL);
+    });
+  });
+}*/
+
 
 const getElementVal = (id) => {
   return document.getElementById(id).value;
